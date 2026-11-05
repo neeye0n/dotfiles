@@ -3,39 +3,19 @@
   "logo": {
     "type": "auto",
     "source": "~/.config/fastfetch/logo/neon.txt",
+    "padding": {
+      "top": 1,
+      "left": 2
+    },
     "color": {
-      "1": "#63d5d3",
-      "2": "#63cccb",
-      "3": "",
-      "4": "",
-      "5": "",
-      "6": "",
-      "7": "",
-      "8": "",
-      "9": ""
+      "1": "#ffb463",
+      "2": "#e7bd63"
     }
   },
   "display": {
-    "separator": "  ",
-    "color": {
-      "keys": "#80d5d3",
-      "title": "#b0cccb"
-    },
-    "temp": {
-      "unit": "D",
-      "ndigits": 1,
-      "color": {
-        "green": "32",
-        "yellow": "93",
-        "red": "91"
-      }
-    },
-    "percent": {
-      "color": {
-        "green": "#b2c8e8",
-        "yellow": "#80d5d3",
-        "red": "#ffb4ab"
-      }
+    "separator": "",
+    "key": {
+      "width": 9
     },
     "bar": {
       "color": {
@@ -43,61 +23,78 @@
         "total": "97",
         "border": "97"
       }
+    },
+    "color": {
+      "keys": "#ffb4a6",
+      "title": "#e7bdb5"
+    },
+    "percent": {
+      "color": {
+        "green": "#ddc48c",
+        "yellow": "#ffb4a6",
+        "red": "#ffb4ab"
+      }
     }
   },
   "modules": [
     "break",
     {
       "type": "custom",
-      "key": "╭───────────────────────────────────╮"
-    },
-    {
-      "type": "kernel",
-      "key": "│   kernel",
-      "format": "{release>22} {#keys}│"
-    },
-    {
-      "type": "command",
-      "key": "│   uptime",
-      "text": "uptime -p | cut -d ' ' -f 2-",
-      "format": "{>22} {#keys}│"
-    },
-    {
-      "type": "shell",
-      "key": "│   shell ",
-      "format": "{pretty-name>22} {#keys}│"
-    },
-    {
-      "type": "command",
-      "key": "│   mem   ",
-      "text": "free -m | awk 'NR==2{printf \"%.2f GiB / %.2f GiB\",$3/1024,$2/1024}'",
-      "format": "{>22} {#keys}│"
-    },
-    {
-      "type": "packages",
-      "key": "│   pkgs  ",
-      "format": "{all>22} {#keys}│"
-    },
-    {
-      "type": "command",
-      "key": "│   user  ",
-      "text": "echo $USER",
-      "format": "{>22} {#keys}│"
-    },
-    {
-      "type": "command",
-      "key": "│   hname ",
-      "text": "hostnamectl hostname",
-      "format": "{>22} {#keys}│"
+      "key": "╭────────────────────────────────╮"
     },
     {
       "type": "os",
-      "key": "│ 󰻀  distro",
-      "format": "{pretty-name>22} {#keys}│"
+      "key": "│ 󰻀 DIST ",
+      "format": "{pretty-name>24} {#keys}│"
+    },
+    {
+      "type": "os",
+      "key": "│  KER ",
+      "format": "{kernel-release>24} {#keys}│"
+    },
+    {
+      "type": "packages",
+      "key": "│ 󰮯 PAC ",
+      "format": "lua:local a = ...; local s = a.pacman .. ' packages'; local n = 24; s = s:sub(1, n); s = string.rep(' ', math.max(0, n - #s)) .. s; return s .. ' \\27[95m│\\27[0m'"
+    },
+    {
+      "type": "wm",
+      "key": "│ 󰧨 WM ",
+      "format": "lua:local a = ...; local s = a.prettyName .. ' ' .. a.version; local n = 24; s = s:sub(1, n); s = string.rep(' ', math.max(0, n - #s)) .. s; return s .. ' \\27[95m│\\27[0m'"
+    },
+    {
+      "type": "lm",
+      "key": "│ 󰍂 LM ",
+      "format": "{pretty-name>24} {#keys}│"
+    },
+    {
+      "type": "terminal",
+      "key": "│  TERM",
+      "format": "lua:local a = ...; local s = a.prettyName .. ' ' .. a.version; local n = 24; s = s:sub(1, n); s = string.rep(' ', math.max(0, n - #s)) .. s; return s .. ' \\27[95m│\\27[0m'"
+    },
+    {
+      "type": "shell",
+      "key": "│  SH ",
+      "format": "lua:local a = ...; local s = a.prettyName .. ' ' .. a.version; local n = 24; s = s:sub(1, n); s = string.rep(' ', math.max(0, n - #s)) .. s; return s .. ' \\27[95m│\\27[0m'"
+    },
+    {
+      "type": "cpu",
+      "key": "│ 󰍛 CPU  ",
+      "format": "{name>24} {#keys}│"
+    },
+    {
+      "type": "gpu",
+      "key": "│ 󰘚 GPU  ",
+      "format": "{name>24} {#keys}│"
+    },
+    {
+      "type": "memory",
+      "key": "│  RAM  ",
+      "format": "lua:local a = ...; local s = a.used .. ' / ' .. a.total; local n = 24; s = s:sub(1, n); s = string.rep(' ', math.max(0, n - #s)) .. s; return s .. ' \\27[95m│\\27[0m'"
     },
     {
       "type": "custom",
-      "key": "╰───────────────────────────────────╯"
+      "key": "╰────────────────────────────────╯"
     },
     "break"
   ]

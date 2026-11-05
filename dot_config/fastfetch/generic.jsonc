@@ -1,0 +1,108 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/master/doc/json_schema.json",
+  "logo": {
+    "type": "auto",
+    "source": "~/.config/fastfetch/logo/neon.txt",
+    "color": {
+      "1": "#ffb463",
+      "2": "#e7bd63",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": ""
+    },
+    "padding": {
+      "top": 1,
+      "left": 2
+    }
+  },
+  "display": {
+    "separator": "",
+    "key": {
+      "width": 11
+    },
+    "color": {
+      "keys": "#ffb4a6",
+      "title": "#e7bdb5"
+    },
+    "percent": {
+      "color": {
+        "green": "#ddc48c",
+        "yellow": "#ffb4a6",
+        "red": "#ffb4ab"
+      }
+    },
+    "bar": {
+      "color": {
+        "elapsed": "auto",
+        "total": "97",
+        "border": "97"
+      }
+    }
+  },
+  "modules": [
+    "break",
+    {
+      "type": "custom",
+      "key": "╭─────────────────────────────────╮"
+    },
+    {
+      "type": "os",
+      "key": "│  󰻀 DIST ",
+      "format": "{pretty-name>23} {#keys}│"
+    },
+    {
+      "type": "kernel",
+      "key": "│   KER ",
+      "format": "{release>23} {#keys}│"
+    },
+    {
+      "type": "packages",
+      "key": "│   PKG ",
+      "format": "{all>23} {#keys}│"
+    },
+    {
+      "type": "wm",
+      "key": "│  󰧨 WM ",
+      "format": "{pretty-name>23} {#keys}│"
+    },
+    {
+      "type": "lm",
+      "key": "│  󰍂 LM ",
+      "format": "{>23} {#keys}│"
+    },
+    {
+      "type": "terminal",
+      "key": "│   TERM",
+      "format": "{pretty-name>23} {#keys}│"
+    },
+    {
+      "type": "shell",
+      "key": "│   SH ",
+      "format": "{>23} {#keys}│"
+    },
+    {
+      "type": "cpu",
+      "key": "│  󰍛 CPU  ",
+      "format": "{name>23} {#keys}│"
+    },
+    {
+      "type": "gpu",
+      "key": "│  󰘚 GPU  ",
+      "format": "{name>23} {#keys}│"
+    },
+    {
+      "type": "memory",
+      "key": "│   RAM  ",
+      "format": "{total>23} {#keys}│"
+    },
+    {
+      "type": "custom",
+      "key": "╰─────────────────────────────────╯"
+    },
+    "break"
+  ]
+}
