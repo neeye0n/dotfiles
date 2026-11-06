@@ -1,268 +1,143 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 palette = "noctalia"
 
-add_newline = false
-
 format = """
-[█](surface0)$os$username[]\
-(bg:blue fg:surface0)$directory[]\
-(fg:blue bg:green)$git_branch$git_status[](fg:green) \
+[╭](fg:subtext0)\
+$os\
+$directory\
+$git_branch\
+$fill\
+$nodejs\
+$dotnet\
+$python\
+$java\
+$c\
+$cmd_duration\
+$shell\
+$time\
+$username\
+$line_break\
+$character\
 """
 
-right_format = """
-[](fg:surface0)$status\
-[](bg:surface0 fg:text)$kubernetes\
-[](bg:surface0 fg:text)$time\
-"""
-
-[aws]
-symbol = " "
-
-[buf]
-symbol = " "
-
-[bun]
-symbol = " "
-
-[c]
-symbol = " "
-
-[cpp]
-symbol = " "
-
-[cmake]
-symbol = " "
-
-[conda]
-symbol = " "
-
-[crystal]
-symbol = " "
-
-[dart]
-symbol = " "
-
-[deno]
-symbol = " "
-
-[docker_context]
-symbol = " "
-
-[elixir]
-symbol = " "
-
-[elm]
-symbol = " "
-
-[fennel]
-symbol = " "
-
-[fortran]
-symbol = " "
-
-[fossil_branch]
-symbol = " "
-
-[gcloud]
-symbol = " "
-
-[git_commit]
-tag_symbol = '  '
-
-[golang]
-symbol = " "
-
-[gradle]
-symbol = " "
-
-[guix_shell]
-symbol = " "
-
-[haskell]
-symbol = " "
-
-[haxe]
-symbol = " "
-
-[hg_branch]
-symbol = " "
-
-[hostname]
-ssh_symbol = " "
-
-[java]
-symbol = " "
-
-[julia]
-symbol = " "
-
-[kotlin]
-symbol = " "
-
-[lua]
-symbol = " "
-
-[memory_usage]
-symbol = "󰍛 "
-
-[meson]
-symbol = "󰔷 "
-
-[nim]
-symbol = "󰆥 "
-
-[nix_shell]
-symbol = " "
-
-[nodejs]
-symbol = " "
-
-[ocaml]
-symbol = " "
+add_newline = true
 
 [os]
+format = '(fg:subtext0)[](fg:red)[$symbol](fg:base bg:red)[](fg:red)'
 disabled = false
-style = "bg:surface0 fg:text"
 
 [os.symbols]
-Alpaquita = " "
-Alpine = " "
-AlmaLinux = " "
-Amazon = " "
-Android = " "
-AOSC = " "
-Arch = " "
-Artix = " "
-CachyOS = " "
-CentOS = " "
-Debian = " "
-DragonFly = " "
-Elementary = " "
-Emscripten = " "
-EndeavourOS = " "
-Fedora = " "
-FreeBSD = " "
-Garuda = "󰛓 "
-Gentoo = " "
-HardenedBSD = "󰞌 "
-Illumos = "󰈸 "
-Ios = "󰀷 "
-Kali = " "
-Linux = " "
-Mabox = " "
-Macos = " "
-Manjaro = " "
-Mariner = " "
-MidnightBSD = " "
-Mint = " "
-NetBSD = " "
-NixOS = " "
-Nobara = " "
-OpenBSD = "󰈺 "
-openSUSE = " "
-OracleLinux = "󰌷 "
-Pop = " "
-Raspbian = " "
-Redhat = " "
-RedHatEnterprise = " "
-RockyLinux = " "
-Redox = "󰀘 "
-Solus = "󰠳 "
-SUSE = " "
-Ubuntu = " "
-Unknown = " "
-Void = " "
-Windows = "󰍲 "
-Zorin = " "
-
-[username]
-show_always = true
-style_user = "bg:surface0 fg:text"
-style_root = "bg:surface0 fg:text"
-format = '[ $user ]($style)'
+Alpaquita = ""
+Alpine = ""
+AlmaLinux = ""
+Amazon = ""
+Android = ""
+AOSC = ""
+Arch = ""
+Artix = ""
+CachyOS = ""
+CentOS = ""
+Debian = ""
+DragonFly = ""
+Elementary = ""
+Emscripten = ""
+EndeavourOS = ""
+Fedora = ""
+FreeBSD = ""
+Garuda = "󰛓"
+Gentoo = ""
+HardenedBSD = "󰞌"
+Illumos = "󰈸"
+Ios = "󰀷"
+Kali = ""
+Linux = ""
+Mabox = ""
+Macos = ""
+Manjaro = ""
+Mariner = ""
+MidnightBSD = ""
+Mint = ""
+NetBSD = ""
+NixOS = ""
+Nobara = ""
+OpenBSD = "󰈺"
+openSUSE = ""
+OracleLinux = "󰌷"
+Pop = ""
+Raspbian = ""
+Redhat = ""
+RedHatEnterprise = ""
+RockyLinux = ""
+Redox = "󰀘"
+Solus = "󰠳"
+SUSE = ""
+Ubuntu = ""
+Unknown = ""
+Void = ""
+Windows = "󰍲"
+Zorin = ""
 
 [directory]
-read_only = "󰌾 "
-style = "fg:mantle bg:blue"
-format = "[ $path ]($style)"
-truncation_length = 10
-truncation_symbol = "…/"
-truncate_to_repo = false
+format = '[─](fg:subtext0)[](fg:pink)[󰷏](fg:base bg:pink)[](fg:pink bg:surface1)[ ${read_only}](fg:red bg:surface1)[$truncation_symbol$path](fg:subtext1 bg:surface1)[](fg:surface1)'
+home_symbol = " ~/"
+truncation_symbol = ' '
+truncation_length = 2
+read_only = '󱧵 '
+read_only_style = 'fg:red bg:surface1'
 
 [git_branch]
-symbol = ""
-style = "bg:teal"
-format = '[[ $symbol $branch ](fg:base bg:green)]($style)'
+format = '[─](fg:subtext0)[](fg:green)[$symbol](fg:base bg:green)[](fg:green bg:surface1)[ $branch](fg:subtext1 bg:surface1)[](fg:surface1)'
+symbol = ''
 
-[git_status]
-style = "bg:teal"
-format = '[[($all_status$ahead_behind )](fg:base bg:green)]($style)'
+[nodejs]
+format = '[─](fg:subtext0)[](fg:green)[$symbol](fg:base bg:green)[](fg:green bg:surface1)[ $version](fg:subtext1 bg:surface1)[](fg:surface1)'
+symbol = '󰎙 Node.js'
 
-[package]
-symbol = "󰏗 "
-
-[perl]
-symbol = " "
-
-[php]
-symbol = " "
-
-[pijul_channel]
-symbol = " "
-
-[pixi]
-symbol = "󰏗 "
+[dotnet]
+format = '[─](fg:subtext0)[](fg:sapphire)[$symbol](fg:base bg:sapphire)[](fg:sapphire bg:surface1)[ $tfm](fg:subtext1 bg:surface1)[](fg:surface1)'
+symbol = ' .NET'
 
 [python]
-symbol = " "
+format = '[─](fg:subtext0)[](fg:green)[$symbol](fg:base bg:green)[](fg:green bg:surface1)[ $version](fg:subtext1 bg:surface1)[](fg:surface1)'
+symbol = ' python'
 
-[rlang]
-symbol = "󰟔 "
+[java]
+format = '[─](fg:subtext0)[](fg:red)[$symbol](fg:base bg:red)[](fg:red bg:surface1)[ $version](fg:subtext1 bg:surface1)[](fg:surface1)'
+symbol = ' Java'
 
-[ruby]
-symbol = " "
+[c]
+format = '[─](fg:subtext0)[](fg:blue)[$symbol](fg:base bg:blue)[](fg:blue bg:surface1)[ $version](fg:subtext1 bg:surface1)[](fg:surface1)'
+symbol = ' C'
 
-[rust]
-symbol = "󱘗 "
+[fill]
+symbol = '─'
+style = 'fg:subtext0'
 
-[scala]
-symbol = " "
+[cmd_duration]
+min_time = 500
+format = '[─](fg:subtext0)[](fg:flamingo)[](fg:base bg:flamingo)[](fg:flamingo bg:surface1)[ $duration ](fg:subtext1 bg:surface1)[](fg:surface1)'
 
-# [status]
-# symbol = " "
-
-[status]
+[shell]
+format = '[─](fg:subtext0)[](fg:blue)[](fg:base bg:blue)[](fg:blue bg:surface1)[ $indicator](fg:subtext1 bg:surface1)[](fg:surface1)'
+unknown_indicator = 'shell'
+powershell_indicator = 'powershell'
+fish_indicator = 'fish'
 disabled = false
-style = 'bg:surface0'
-failure_style = 'bg:surface0 fg:red'
-success_style = 'bg:surface0 fg:green'
-success_symbol = " "
-symbol = " "
-not_executable_symbol = " "
-not_found_symbol = " "
-sigint_symbol = " "
-signal_symbol = " "
-format = '[ $symbol $status ]($style)'
-
-[swift]
-symbol = " "
-
-[xmake]
-symbol = " "
-
-[zig]
-symbol = " "
-
-[kubernetes]
-disabled = false
-style = "bg:surface0 fg:text"
-format = '[ $symbol$context( \($namespace\) )]($style)'
 
 [time]
+format = '[─](fg:subtext0)[](fg:sapphire)[󰦖](fg:base bg:sapphire)[](fg:sapphire bg:surface1)[ $time](fg:subtext1 bg:surface1)[](fg:surface1)'
+time_format = '%H:%M'
 disabled = false
-time_format = "%T"
-style = "bg:blue"
-format = '[[ $time  ](fg:text bg:surface0)]($style)'
+
+[username]
+format = '[─](fg:subtext0)[](fg:yellow)[](fg:base bg:yellow)[](fg:yellow bg:surface1)[ $user](fg:subtext1 bg:surface1)[](fg:surface1) '
+show_always = true
+
+[character]
+format = """
+[╰─$symbol](fg:subtext0) """
+success_symbol = ' [ ](fg:bold green)'
+error_symbol = '[ × ](fg:bold red)'
 
 # >>> NOCTALIA STARSHIP PALETTE >>>
 # Noctalia Starship Palette
@@ -270,40 +145,40 @@ format = '[[ $time  ](fg:text bg:surface0)]($style)'
 
 [palettes.noctalia]
 # Standard colors
-blue      = "#f0b0ff"
+blue      = "#ddc48c"
 red       = "#ffb4ab"
-green     = "#a4c8ff"
-yellow    = "#adc8f2"
-cyan      = "#adc8f2"
-magenta   = "#a4c8ff"
-white     = "#e0e2ea"
-black     = "#414752"
+green     = "#ffb4a6"
+yellow    = "#e7bdb5"
+cyan      = "#e7bdb5"
+magenta   = "#ffb4a6"
+white     = "#f1dfdb"
+black     = "#534340"
 
 # Extended palette (Catppuccin-compatible names)
-rosewater = "#adc8f2"
+rosewater = "#e7bdb5"
 flamingo  = "#ffb4ab"
-pink      = "#a4c8ff"
-mauve     = "#a4c8ff"
+pink      = "#ffb4a6"
+mauve     = "#ffb4a6"
 maroon    = "#ffb4ab"
-peach     = "#adc8f2"
-teal      = "#adc8f2"
-sky       = "#adc8f2"
-sapphire  = "#f0b0ff"
-lavender  = "#a4c8ff"
+peach     = "#e7bdb5"
+teal      = "#e7bdb5"
+sky       = "#e7bdb5"
+sapphire  = "#ddc48c"
+lavender  = "#ffb4a6"
 
 # Text shades
-text      = "#e0e2ea"
-subtext1  = "#e0e2ea"
-subtext0  = "#8b919e"
+text      = "#f1dfdb"
+subtext1  = "#f1dfdb"
+subtext0  = "#a08c89"
 
 # Surface shades
-overlay2  = "#8b919e"
-overlay1  = "#8b919e"
-overlay0  = "#414752"
-surface2  = "#414752"
-surface1  = "#414752"
-surface0  = "#101419"
-base      = "#101419"
-mantle    = "#101419"
-crust     = "#101419"
+overlay2  = "#a08c89"
+overlay1  = "#a08c89"
+overlay0  = "#534340"
+surface2  = "#534340"
+surface1  = "#534340"
+surface0  = "#1a1110"
+base      = "#1a1110"
+mantle    = "#1a1110"
+crust     = "#1a1110"
 # <<< NOCTALIA STARSHIP PALETTE <<<
