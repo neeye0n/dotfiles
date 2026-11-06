@@ -3,8 +3,17 @@ palette = "noctalia"
 
 add_newline = false
 
-format = "[█](surface0)$os$username[](bg:blue fg:surface0)$directory[](fg:blue bg:green)$git_branch$git_status[](fg:green) "
-right_format = "[](fg:surface0)$status[](bg:surface0 fg:text)$kubernetes[](bg:surface0 fg:text)$time"
+format = """
+[█](surface0)$os$username[]\
+(bg:blue fg:surface0)$directory[]\
+(fg:blue bg:green)$git_branch$git_status[](fg:green) \
+"""
+
+right_format = """
+[](fg:surface0)$status\
+[](bg:surface0 fg:text)$kubernetes\
+[](bg:surface0 fg:text)$time\
+"""
 
 [aws]
 symbol = " "
@@ -251,9 +260,9 @@ format = '[ $symbol$context( \($namespace\) )]($style)'
 
 [time]
 disabled = false
-time_format = "%Y-%m-%d %H:%M:%S"
+time_format = "%T"
 style = "bg:blue"
-format = '[[  $time ](fg:text bg:surface0)]($style)'
+format = '[[ $time  ](fg:text bg:surface0)]($style)'
 
 # >>> NOCTALIA STARSHIP PALETTE >>>
 # Noctalia Starship Palette
