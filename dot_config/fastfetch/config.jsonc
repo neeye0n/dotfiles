@@ -8,8 +8,8 @@
       "left": 11
     },
     "color": {
-      "1": "#ffb463",
-      "2": "#e7bd63"
+      "1": "#63c7ff",
+      "2": "#63c6dc"
     }
   },
   "display": {
@@ -25,13 +25,13 @@
       }
     },
     "color": {
-      "keys": "#ffb4a6",
-      "title": "#e7bdb5"
+      "keys": "#aac7ff",
+      "title": "#bec6dc"
     },
     "percent": {
       "color": {
-        "green": "#ddc48c",
-        "yellow": "#ffb4a6",
+        "green": "#dcbce0",
+        "yellow": "#aac7ff",
         "red": "#ffb4ab"
       }
     }
