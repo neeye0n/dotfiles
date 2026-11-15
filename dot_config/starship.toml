@@ -1,184 +1,208 @@
 "$schema" = 'https://starship.rs/config-schema.json'
-palette = "noctalia"
 
 format = """
-[╭](fg:subtext0)\
+[](red)\
 $os\
-$directory\
-$git_branch\
-$fill\
-$nodejs\
-$dotnet\
-$python\
-$java\
-$c\
-$cmd_duration\
-$shell\
-$time\
 $username\
+[](bg:peach fg:red)\
+$directory\
+[](bg:yellow fg:peach)\
+$git_branch\
+$git_status\
+[](fg:yellow bg:green)\
+$c\
+$rust\
+$golang\
+$nodejs\
+$bun\
+$php\
+$java\
+$kotlin\
+$haskell\
+$python\
+[](fg:green bg:sapphire)\
+$conda\
+[](fg:sapphire bg:lavender)\
+$time\
+[ ](fg:lavender)\
+$cmd_duration\
 $line_break\
-$character\
-"""
+$character"""
 
-add_newline = true
+palette = 'catppuccin_mocha'
 
 [os]
-format = '(fg:subtext0)[](fg:red)[$symbol](fg:base bg:red)[](fg:red)'
 disabled = false
+style = "bg:red fg:crust"
 
 [os.symbols]
-Alpaquita = ""
-Alpine = ""
-AlmaLinux = ""
-Amazon = ""
-Android = ""
-AOSC = ""
-Arch = ""
-Artix = ""
-CachyOS = ""
-CentOS = ""
-Debian = ""
-DragonFly = ""
-Elementary = ""
-Emscripten = ""
-EndeavourOS = ""
-Fedora = ""
-FreeBSD = ""
-Garuda = "󰛓"
-Gentoo = ""
-HardenedBSD = "󰞌"
-Illumos = "󰈸"
-Ios = "󰀷"
-Kali = ""
-Linux = ""
-Mabox = ""
-Macos = ""
-Manjaro = ""
-Mariner = ""
-MidnightBSD = ""
-Mint = ""
-NetBSD = ""
-NixOS = ""
-Nobara = ""
-OpenBSD = "󰈺"
-openSUSE = ""
-OracleLinux = "󰌷"
-Pop = ""
-Raspbian = ""
-Redhat = ""
-RedHatEnterprise = ""
-RockyLinux = ""
-Redox = "󰀘"
-Solus = "󰠳"
-SUSE = ""
-Ubuntu = ""
-Unknown = ""
-Void = ""
-Windows = "󰍲"
-Zorin = ""
-
-[directory]
-format = '[─](fg:subtext0)[](fg:pink)[󰷏](fg:base bg:pink)[](fg:pink bg:surface1)[ ${read_only}](fg:red bg:surface1)[$truncation_symbol$path](fg:subtext1 bg:surface1)[](fg:surface1)'
-home_symbol = " ~/"
-truncation_symbol = ' '
-truncation_length = 2
-read_only = '󱧵 '
-read_only_style = 'fg:red bg:surface1'
-
-[git_branch]
-format = '[─](fg:subtext0)[](fg:green)[$symbol](fg:base bg:green)[](fg:green bg:surface1)[ $branch](fg:subtext1 bg:surface1)[](fg:surface1)'
-symbol = ''
-
-[nodejs]
-format = '[─](fg:subtext0)[](fg:green)[$symbol](fg:base bg:green)[](fg:green bg:surface1)[ $version](fg:subtext1 bg:surface1)[](fg:surface1)'
-symbol = '󰎙 Node.js'
-
-[dotnet]
-format = '[─](fg:subtext0)[](fg:sapphire)[$symbol](fg:base bg:sapphire)[](fg:sapphire bg:surface1)[ $tfm](fg:subtext1 bg:surface1)[](fg:surface1)'
-symbol = ' .NET'
-
-[python]
-format = '[─](fg:subtext0)[](fg:green)[$symbol](fg:base bg:green)[](fg:green bg:surface1)[ $version](fg:subtext1 bg:surface1)[](fg:surface1)'
-symbol = ' python'
-
-[java]
-format = '[─](fg:subtext0)[](fg:red)[$symbol](fg:base bg:red)[](fg:red bg:surface1)[ $version](fg:subtext1 bg:surface1)[](fg:surface1)'
-symbol = ' Java'
-
-[c]
-format = '[─](fg:subtext0)[](fg:blue)[$symbol](fg:base bg:blue)[](fg:blue bg:surface1)[ $version](fg:subtext1 bg:surface1)[](fg:surface1)'
-symbol = ' C'
-
-[fill]
-symbol = '─'
-style = 'fg:subtext0'
-
-[cmd_duration]
-min_time = 500
-format = '[─](fg:subtext0)[](fg:flamingo)[](fg:base bg:flamingo)[](fg:flamingo bg:surface1)[ $duration ](fg:subtext1 bg:surface1)[](fg:surface1)'
-
-[shell]
-format = '[─](fg:subtext0)[](fg:blue)[](fg:base bg:blue)[](fg:blue bg:surface1)[ $indicator](fg:subtext1 bg:surface1)[](fg:surface1)'
-unknown_indicator = 'shell'
-powershell_indicator = 'powershell'
-fish_indicator = 'fish'
-disabled = false
-
-[time]
-format = '[─](fg:subtext0)[](fg:sapphire)[󰦖](fg:base bg:sapphire)[](fg:sapphire bg:surface1)[ $time](fg:subtext1 bg:surface1)[](fg:surface1)'
-time_format = '%H:%M'
-disabled = false
+Windows = " "
+Ubuntu = "󰕈 "
+SUSE = " "
+Raspbian = "󰐿 "
+Mint = "󰣭 "
+Macos = "󰀵 "
+Manjaro = " "
+Linux = "󰌽 "
+Gentoo = "󰣨 "
+Fedora = "󰣛 "
+Alpine = " "
+Amazon = " "
+Android = " "
+AOSC = " "
+Arch = "󰣇 "
+Artix = "󰣇 "
+CachyOS = " "
+CentOS = " "
+Debian = "󰣚 "
+Redhat = "󱄛 "
+RedHatEnterprise = "󱄛 "
+Void = " "
 
 [username]
-format = '[─](fg:subtext0)[](fg:yellow)[](fg:base bg:yellow)[](fg:yellow bg:surface1)[ $user](fg:subtext1 bg:surface1)[](fg:surface1) '
 show_always = true
+style_user = "bg:red fg:crust"
+style_root = "bg:red fg:crust"
+format = '[$user]($style)'
+
+[directory]
+style = "bg:peach fg:crust"
+format = "[ ${read_only}]($style)[$truncation_symbol$path]($style)"
+truncation_length = 3
+truncation_symbol = ' /'
+home_symbol = " ~"
+read_only = '󱧵 '
+
+[git_branch]
+symbol = ""
+style = "bg:yellow"
+format = '[[ $symbol $branch ](fg:crust bg:yellow)]($style)'
+
+[git_status]
+style = "bg:yellow"
+format = '[[($all_status$ahead_behind )](fg:crust bg:yellow)]($style)'
+
+[nodejs]
+symbol = ""
+style = "bg:green"
+format = '[[ $symbol( $version) ](fg:crust bg:green)]($style)'
+
+[bun]
+symbol = ""
+style = "bg:green"
+format = '[[ $symbol( $version) ](fg:crust bg:green)]($style)'
+
+[c]
+symbol = " "
+style = "bg:green"
+format = '[[ $symbol( $version) ](fg:crust bg:green)]($style)'
+
+[rust]
+symbol = ""
+style = "bg:green"
+format = '[[ $symbol( $version) ](fg:crust bg:green)]($style)'
+
+[golang]
+symbol = ""
+style = "bg:green"
+format = '[[ $symbol( $version) ](fg:crust bg:green)]($style)'
+
+[php]
+symbol = ""
+style = "bg:green"
+format = '[[ $symbol( $version) ](fg:crust bg:green)]($style)'
+
+[java]
+symbol = " "
+style = "bg:green"
+format = '[[ $symbol( $version) ](fg:crust bg:green)]($style)'
+
+[jj_bookmark]
+symbol = ""
+style = "bg:yellow"
+format = '[[ $symbol $bookmark(@$remote)$diverged( \\(+$overflow_count others\\)) ](fg:crust bg:yellow)]($style)'
+
+[jj_status]
+style = "bg:yellow"
+format = '[[($all )](fg:crust bg:yellow)]($style)'
+
+[kotlin]
+symbol = ""
+style = "bg:green"
+format = '[[ $symbol( $version) ](fg:crust bg:green)]($style)'
+
+[haskell]
+symbol = ""
+style = "bg:green"
+format = '[[ $symbol( $version) ](fg:crust bg:green)]($style)'
+
+[python]
+symbol = ""
+style = "bg:green"
+format = '[[ $symbol( $version)(\(#$virtualenv\)) ](fg:crust bg:green)]($style)'
+
+[docker_context]
+symbol = ""
+style = "bg:sapphire"
+format = '[[ $symbol( $context) ](fg:crust bg:sapphire)]($style)'
+
+[conda]
+symbol = "  "
+style = "fg:crust bg:sapphire"
+format = '[$symbol$environment ]($style)'
+ignore_base = false
+
+[time]
+disabled = false
+time_format = "%R"
+style = "bg:lavender"
+format = '[[  $time ](fg:crust bg:lavender)]($style)'
+
+[line_break]
+disabled = true
 
 [character]
-format = """
-[╰─$symbol](fg:subtext0) """
-success_symbol = ' [ ](fg:bold green)'
-error_symbol = '[ × ](fg:bold red)'
+disabled = false
+success_symbol = '[❯](bold fg:green)'
+error_symbol = '[❯](bold fg:red)'
+vimcmd_symbol = '[❮](bold fg:green)'
+vimcmd_replace_one_symbol = '[❮](bold fg:lavender)'
+vimcmd_replace_symbol = '[❮](bold fg:lavender)'
+vimcmd_visual_symbol = '[❮](bold fg:yellow)'
 
-# >>> NOCTALIA STARSHIP PALETTE >>>
-# Noctalia Starship Palette
-# Generated by Noctalia - do not edit manually
+[cmd_duration]
+show_milliseconds = true
+format = " in $duration "
+style = "bg:lavender"
+disabled = false
+show_notifications = true
+min_time_to_notify = 45000
 
-[palettes.noctalia]
-# Standard colors
-blue      = "#dcbce0"
-red       = "#ffb4ab"
-green     = "#aac7ff"
-yellow    = "#bec6dc"
-cyan      = "#b2cad2"
-magenta   = "#c3c0ff"
-white     = "#c4c6d0"
-black     = "#44474e"
+[palettes.catppuccin_mocha]
+rosewater = "#f5e0dc"
+flamingo = "#f2cdcd"
+pink = "#f5c2e7"
+mauve = "#cba6f7"
+red = "#f38ba8"
+maroon = "#eba0ac"
+peach = "#fab387"
+yellow = "#f9e2af"
+green = "#a6e3a1"
+teal = "#94e2d5"
+sky = "#89dceb"
+sapphire = "#74c7ec"
+blue = "#89b4fa"
+lavender = "#b4befe"
+text = "#cdd6f4"
+subtext1 = "#bac2de"
+subtext0 = "#a6adc8"
+overlay2 = "#9399b2"
+overlay1 = "#7f849c"
+overlay0 = "#6c7086"
+surface2 = "#585b70"
+surface1 = "#45475a"
+surface0 = "#313244"
+base = "#1e1e2e"
+mantle = "#181825"
+crust = "#11111b"
 
-# Extended palette (Catppuccin-compatible names)
-rosewater = "#e6cff2"
-flamingo  = "#ffcbc5"
-pink      = "#aedfec"
-mauve     = "#c3c0ff"
-maroon    = "#ffcbc5"
-peach     = "#e6cff2"
-teal      = "#b2cad2"
-sky       = "#badfcc"
-sapphire  = "#ffc7e3"
-lavender  = "#aedfec"
-
-# Text shades
-text      = "#e2e2e9"
-subtext1  = "#c4c6d0"
-subtext0  = "#8e9099"
-
-# Surface shades
-overlay2  = "#8e9099"
-overlay1  = "#8e9099"
-overlay0  = "#44474e"
-surface2  = "#44474e"
-surface1  = "#44474e"
-surface0  = "#111318"
-base      = "#111318"
-mantle    = "#111318"
-crust     = "#111318"
-# <<< NOCTALIA STARSHIP PALETTE <<<
