@@ -8,7 +8,7 @@ abbr -a ff "fastfetch"
 abbr -a czm "chezmoi"
 abbr -a ll "ls -lah"
 abbr -a clr "clear"
-alias refish="source ~/.config/fish/**/*.fish"
+alias refish="clear && source ~/.config/fish/**/*.fish"
 
 # 3. Starship Shell Prompt Setup
 function starship_transient_prompt_func

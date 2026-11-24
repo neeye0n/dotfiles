@@ -5,7 +5,7 @@
     "source": "~/.config/fastfetch/logo/neon.txt",
     "padding": {
       "top": 1,
-      "left": 11
+      "left": 1
     },
     "color": {
       "1": "#63c7ff",
