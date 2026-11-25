@@ -6,12 +6,13 @@ package.path = table.concat({
 }, ";")
 
 -- Clear cached modules so they re-execute on reload (ensures binds/rules re-register)
-for _, mod in ipairs({ "vars", "monitors", "inputs", "animations", "decorations", "layouts", "workspaces" }) do
+for _, mod in ipairs({ "vars", "environment", "monitors", "inputs", "animations", "decorations", "layouts", "workspaces" }) do
     package.loaded[mod] = nil
 end
 
-require("startup")
 require("vars")
+require("environment")
+require("startup")
 require("monitors") -- Auto Generated from nwg-displays
 require("inputs")
 require("layouts")

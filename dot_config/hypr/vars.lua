@@ -6,7 +6,7 @@ local vars = {
     working_dir           = homeDir .. "/.config/hypr",
     scripts               = homeDir .. "/.config/hypr/scripts",
 
-    -- modifiers
+    -- mod key
     mainMod               = "SUPER",
 
     -- workspaces
@@ -22,7 +22,10 @@ local vars = {
 
     -- cursor
     pointer_name          = "Moga-Dark",
-    pointer_size          = "32"
+    pointer_size          = "32",
+
+    -- nvidia gpu flag
+    is_gpu_nvidia         = false
 }
 
 return vars

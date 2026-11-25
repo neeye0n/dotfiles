@@ -13,10 +13,8 @@ hl.window_rule({
     },
 })
 
--- Thunar: Modal
 hl.window_rule({
-    -- match = { class = "^(.*[Tt]hunar.*)$", title = "^(.*[Rr]ename.*)$" },
-    match = { class = "^(.*[Tt]hunar.*)$", modal = true },
+    match = { class = "^(.*[Tt]hunar.*)$", title = "^(.*[Rr]ename.*)$" },
     float = true,
     border_size = 2,
     no_blur = true,
