@@ -22,7 +22,6 @@ require("animations")
 require("decorations")
 require("workspaces")
 
--- Functional Behavior
 hl.config({
     general = {
         resize_on_border = true,

@@ -86,7 +86,7 @@ hl.window_rule({
 
 -- Kitty
 hl.window_rule({
-    match = { class = "^kitty$" },
+    match = { class = "^(.*[kK]itty.*|.*[aA]lacritty.*)$" },
     float = true,
     size = { "max(monitor_w, monitor_h)*0.34", "min(monitor_w, monitor_h)*0.40" },
     center = true
