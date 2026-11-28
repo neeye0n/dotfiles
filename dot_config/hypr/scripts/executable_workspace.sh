@@ -1,5 +1,8 @@
 # #!/bin/bash
 
+exec {fd}<"$0"
+flock -n "$fd" || exit 0
+
 # usage: workspace.sh next|prev
 DIR="${1:-next}"
 [[ $DIR == next || $DIR == prev ]] || { echo "usage: $0 next|prev" >&2; exit 1; }
@@ -31,3 +34,6 @@ else
 fi
 
 hyprctl dispatch "hl.dsp.focus({ workspace = $TARGET })"
+
+# Commented out in favor or lua based debouncer
+# sleep 0.25
