@@ -1,5 +1,8 @@
 #!/bin/bash
 
+exec {fd}<"$0"
+flock -n "$fd" || exit 0
+
 ## Use first argument as output directory, or default to ~/Pictures/Screenshots
 OUTPUT_DIR="${1:-$HOME/Pictures/Screenshots}"
 
@@ -31,4 +34,5 @@ noctalia msg screenshot-region \
     --no-annotate \
     --pipe-to-command \
     --pipe-command "${SATTY_CMD[*]} --filename - --output-filename '$OUTPUT_FILE' --copy-command 'wl-copy'"
-    
+
+sleep 0.25
